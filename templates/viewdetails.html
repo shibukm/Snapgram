@@ -1,0 +1,305 @@
+{% extends 'userHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:aqua;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+}
+tr{
+    text-align:center;
+    font-size: large;
+}
+</style>
+
+<div class="tab" style="margin-top:150px;">
+<h2 style="margin-left:40px;font-weight: bold;font-family: 'Times New Roman', Times, serif;">Photographer Details</h2>    
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th></th>
+</tr>
+{% if graphers %}
+
+<tr>
+    <td>{{graphers.name}}</td>
+    <td>{{graphers.email}}</td>
+    <td>{{graphers.phone}}</td>
+</tr>
+
+
+{% endif %}
+
+</table>
+</div>
+
+{% if msgg %}
+<script>
+alert("{{msgg}}");
+</script>
+{% endif %}
+
+<style>
+
+fieldset, label { margin: 0; padding: 0; }
+
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+            
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+</style>
+
+{{d}}
+{% if d == 5.0 %}
+                                
+<fieldset class="rating" >
+	<label class = "full" for="star5" title="Awesome - 5 stars" style="color: #FFD700;"></label>
+		<label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;" ></label>
+		<label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+		<label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+		<label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+  
+	  </fieldset> 
+	
+{% endif %}
+
+{% if d == 4.5 %}
+                                    
+    <fieldset class="rating" >
+        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        
+        <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label>
+                <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label>
+                <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+                <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+                <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+    </fieldset> 
+                                        
+{% endif %}
+
+{% if d == 4.0 %}
+                                    
+                                    <fieldset class="rating" >
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        
+                                        <!-- <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label> -->
+                                            <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+                                          </fieldset> 
+                                        
+                                    {% endif %}
+
+{% if d == 3.5 %}
+                                    
+                                    <fieldset class="rating" >
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        
+                                        <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label>
+                                            <!-- <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label> -->
+                                            <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+                                          </fieldset> 
+                                        
+{% endif %}
+
+{% if d == 3.0 %}
+                                    
+                                    <fieldset class="rating" >
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        
+                                        <!-- <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label> -->
+                                            <!-- <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label> -->
+                                            <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+                                          </fieldset> 
+                                        
+{% endif %}
+
+{% if d == 2.5 %}
+                                    
+                                    <fieldset class="rating" >
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                        <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label>
+                                            <!-- <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label> -->
+                                            <!-- <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label> -->
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+                                          </fieldset> 
+                                        
+{% endif %}
+{% if d == 2.0 %}
+                                    
+                                    <fieldset class="rating" >
+                                        
+                                        <!-- <label class="half" for="star4half" title="Pretty good - 4.5 stars" ></label> -->
+                                            <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                            <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                            <label class = "full" for="star3" title="Meh - 3 stars" ></label>
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+                                          </fieldset> 
+                                        
+{% endif %}
+{% if d == 1.5 %}
+                                    
+                                    <fieldset class="rating" >
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        
+                                        <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label>
+                                            <!-- <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label> -->
+                                            <!-- <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label> -->
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+                                          </fieldset> 
+                                        
+{% endif %}
+{% if d == 1.0 %}
+                                    
+                                    <fieldset class="rating" >
+                                        
+                                        <!-- <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label> -->
+                                            <!-- <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label> -->
+                                            <!-- <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label> -->
+                                            <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                            <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                            <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                            <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                      
+                                          </fieldset> 
+                                        
+{% endif %}
+{% if d == .5 %}
+                                    
+                                    <fieldset class="rating" >
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars" ></label>
+                                        
+                                        <label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: #FFD700;"></label>
+                                            <!-- <label class = "full" for="star4" title="Pretty good - 4 stars" style="color: #FFD700;"></label> -->
+                                            <!-- <label class = "full" for="star3" title="Meh - 3 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star2" title="Kinda bad - 2 stars" style="color: #FFD700;"></label>
+                                            <label class = "full" for="star1" title="Sucks big time - 1 star" style="color: #FFD700;"></label>
+                                       -->
+                                          </fieldset> 
+                                        
+{% endif %}
+
+                                   
+                                <!-- </ul>
+                                <div class="row person-w3ls-testi mt-5" style="text-align: center;">
+                                    
+                                    <center><div class="col-12  mt-4" >
+                                        <h5>Name : {{d.0}}</h5>
+                                        <p>Posted On : {{d.2}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section> -->
+    
+        </div>
+    </div>
+    </div>
+    <!-- //testimonials -->
+	<script>
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, window.location.href );
+		}
+	</script>
+	<!-- //contact -->
+
+	
+
+                  	
+	</div>
+
+
+
+
+{% endblock %}
+
+

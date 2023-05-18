@@ -1,0 +1,50 @@
+{% extends 'photographerHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:aqua;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+    padding-left:30px;
+}
+tr{
+    text-align:center;
+    font-size: large;
+    
+}
+</style>
+<div class="tab" style="margin-top: 200px;">
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th>Customer</th>
+    <th>FromDate</th>
+    <th>ToDate</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th></th>
+</tr>
+
+{% for b in book %}
+
+<tr>
+    <td>{{b.cid.name}}</td>
+    <td>{{b.fromdate}}</td>
+    <td>{{b.todate}}</td>
+    <td>{{b.location}}</td>
+    <td>{{b.description}}</td>
+    <td><a href="/workstatus?id={{b.id}}">Update Status</a></td>
+</tr>
+
+
+{% endfor %}
+
+</table>
+</div>
+
+{% endblock %}
+
+

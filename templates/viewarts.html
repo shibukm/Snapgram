@@ -1,0 +1,43 @@
+{% extends 'userHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:aqua;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+}
+tr{
+    text-align:center;
+    font-size: large;
+}
+</style>
+<div class="tab" style="margin-top: 200px;">
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+</tr>
+{% for art in arts %}
+<tr>
+    <td>{{art.caption}}</td>
+    <td>{{art.amount}}</td>
+    <td><img src="{{ art.image }}" alt=" " class="img-responsive" style="width: 50px;height:50px;"></td>
+    <td>{{art.phid.name}}</td>
+    <td><a href="/payment?id={{art.id}}"><button style="background-color:royalblue;color:black">Buy</button></a></td>
+</tr>
+
+
+{% endfor %}
+
+</table>
+</div>
+
+{% endblock %}
+
+

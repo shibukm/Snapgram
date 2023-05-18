@@ -1,0 +1,44 @@
+{% extends 'userHeader.html' %}
+{% load static %} 
+
+{% block content %}
+{% load static %}
+
+<style>
+input[type="text"],input[type="email"],input[type="password"],input[type="submit"],input[type="file"],input[type="date"]{
+
+    width:40%;
+    margin-left:30%;
+
+}
+/* body{
+
+    background-image:url("{% static 'images/bg.jpg' %}");
+    background-repeat:no-repeat;
+    background-size: cover;
+} */
+</style>
+</head>
+{% if msg %}
+<script>alert('{{msg}}')</script>
+{% endif %}
+            <h1 style="color:red;margin-top:150px;text-align:center;">Feedbacks</h1>
+
+            <div class="card">
+                <form action="#" method="post" class="p-3 shadow" style="margin-top:100px;" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="form-group" style="margin-top:20px;margin-left:30%">
+                        <textarea name="feed" cols="120" rows="20" placeholder="description"></textarea>
+                    </div>
+                 
+                        <input type="submit" class="btn btn-success" style="margin-top:20px;margin-left:45%; width:10%;">
+                
+                </form>
+                </div>
+                
+ 
+
+{% endblock %}
+
+

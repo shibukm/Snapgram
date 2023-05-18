@@ -1,0 +1,46 @@
+{% extends 'userHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:aqua;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+}
+tr{
+    text-align:center;
+    font-size: large;
+}
+</style>
+<div class="tab" style="margin-top: 200px;">
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th>Paying By</th>
+    <th>Paying To</th>
+    <th>Image</th>
+    <th>Amount</th>
+    <th></th>
+</tr>
+{% if cust %}
+{% if art %}
+<tr>
+    <td>{{cust.name}}</td>
+    <td>{{art.phid.name}}</td>
+    <td><img src="{{ art.image }}" alt=" " class="img-responsive" style="width: 50px;height:50px;"></td>
+    <td>{{art.amount}}</td>
+    <td><a href="/payinterface?id={{art.id}}"><button style="background-color:green;color:black">Pay</button></a></td>
+</tr>
+
+
+{% endif %}
+{% endif %}
+
+</table>
+</div>
+
+{% endblock %}
+
+

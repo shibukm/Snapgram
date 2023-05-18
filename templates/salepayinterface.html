@@ -1,0 +1,67 @@
+{% extends 'userHeader.html' %}
+
+{% load static %} 
+
+{% block content %}
+{% if msg  %}
+<script>alert('{{msg}}')</script>
+{% endif  %}
+{% if cust  %}
+{% if art  %}
+<style>
+	h3{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+	}
+	p{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+		font-weight: bold;
+		font-size: large;
+	}
+</style>
+<div class="grids-agile" style="margin-top:150px;">
+	<div class="col-md-1">                     
+		
+	</div>
+    <div class="col-md-4">                     
+		<img src="{% static 'images/paypal.png' %}" alt=" " class="img-responsive">
+	</div>
+	<div class="col-md-6" style="padding:30px;">
+
+        <form action="#" method="post" class="p-3 shadow" style="margin-top:20px">
+            {% csrf_token %}
+
+            <div class="form-group" style="margin-top:20px">
+                 <input type="text" name="amount" class="form-control" value={{art.amount}} readonly required>
+            </div>
+            <div class="form-group" style="margin-top:20px">
+                <input type="text" name="name" class="form-control" value={{cust.name}} readonly required>
+           </div>
+            <div class="form-group" style="margin-top:20px">
+                <input type="text" name="card" class="form-control" placeholder="Card Number" maxlength="16" required>
+           </div>
+           <div class="form-group" style="margin-top:20px">
+            <input type="text" name="cvv" class="form-control" placeholder="CVV" maxlength="3" required>
+            </div>
+            <div class="form-group" style="margin-top:20px">
+                <input type="date" name="date"  class="form-control" pattern="\d{4}-\d{2}" required>
+            </div>
+         
+                <input type="submit" class="btn btn-success" style="margin-top:20px;margin-left:45%; width:10%;">
+        
+        </form>
+
+		
+	</div>
+	
+	<div class="col-md-1">                     	
+	</div>
+	<div class="clearfix"></div>
+</div>
+{% endif %}
+{% endif %}
+{% endblock %}
+
+
+

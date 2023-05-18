@@ -1,0 +1,64 @@
+{% extends 'userHeader.html' %}
+{% load static %} 
+
+{% block content %}
+{% load static %}
+
+<style>
+input[type="text"],input[type="email"],input[type="password"],input[type="submit"],input[type="file"],input[type="date"]{
+
+    width:40%;
+    margin-left:30%;
+
+}
+/* body{
+
+    background-image:url("{% static 'images/bg.jpg' %}");
+    background-repeat:no-repeat;
+    background-size: cover;
+} */
+</style>
+</head>
+{% if msg %}
+<script>alert('{{msg}}')</script>
+{% endif %}
+{% if user %}
+
+            <h1 style="color:red;margin-top:150px;text-align:center;">Edit</h1>
+
+            <div class="card">
+                <form action="#" method="post" class="p-3 shadow" style="margin-top:150px;" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group" style="margin-top:20px">
+                        <input type="text" name="name" class="form-control" value="{{user.name}}" >
+                        </div>
+                            
+                        <div class="form-group" style="margin-top:20px">
+                        <input type="text" name="address" class="form-control" value="{{user.addr}}">
+                        </div> 
+                    
+                        <div class="form-group" style="margin-top:20px">
+                                <input type="text" name="district" class="form-control" value="{{user.district}}">
+                        </div>     
+                        <div class="form-group" style="margin-top:20px">
+                            <input type="email" name="email" class="form-control" value="{{user.email}}"required>
+                            </div> 
+                                
+                         <div class="form-group" style="margin-top:20px">
+                             <input type="text" name="phone" class="form-control" value="{{user.phone}}" pattern="[0-9]{10}" maxlength="10">
+                        </div>
+                 
+                        <input type="submit" class="btn btn-success" style="margin-top:20px;margin-left:45%; width:10%;">
+                
+                </form>
+                
+                </div>
+     
+
+
+
+{% endif %}
+
+{% endblock %}
+
+

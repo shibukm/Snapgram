@@ -1,0 +1,36 @@
+{% extends 'associateHeader.html' %} {% load static %} {% block content %} {%
+for graph in graphers %}
+<style>
+	h3 {
+		font-family: 'Times New Roman', Times, serif;
+		margin-top: 20px;
+	}
+	p {
+		font-family: 'Times New Roman', Times, serif;
+		margin-top: 20px;
+		font-weight: bold;
+		font-size: large;
+	}
+</style>
+<div class="grids-agile" style="margin-top: 150px">
+	<div class="col-md-1"></div>
+	<div class="col-md-6" style="padding: 30px">
+		<div class="">
+			<img src="/media/{{graph.profile}}" width="200" alt="" />
+		</div>
+		<h1>{{graph.name}}</h1>
+		<h3>{{graph.district}}</h3>
+		<h3>{{graph.specialization}}</h3>
+		<h3>{{graph.email}}</h3>
+		<h3>{{graph.phone}}</h3>
+		<p>{{graph.addr}}</p>
+		<a href="{{graph.insta}}">Instagram</a>
+		<a href="{{graph.fb}}">Facebook</a>
+	</div>
+	<div class="col-md-4">
+		<img src="{{ graph.image }}" alt=" " class="img-responsive" />
+	</div>
+	<div class="col-md-1"></div>
+	<div class="clearfix"></div>
+</div>
+{% endfor %} {% endblock %}

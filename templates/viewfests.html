@@ -1,0 +1,50 @@
+{% extends 'photographerHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:dimgray;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+    padding-left:20px;
+}
+tr{
+    text-align:center;
+    font-size: large;
+}
+td{
+    padding-left:10px;
+}
+</style>
+<div class="tab" style="margin-top: 200px;">
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th>Event</th>
+    <th>Date</th>
+    <th>Association</th>
+    <th>Location</th>
+    <th>Details</th>
+</tr>
+
+{% for f in fests %}
+
+<tr>
+    <td>{{f.event}}</td>
+    <td>{{f.date}}</td>
+    <td>{{f.assocname}}</td>
+    <td>{{f.loc}}</td>
+    <td>{{f.desc}}</td>
+</tr>
+
+
+{% endfor %}
+
+</table>
+</div>
+
+{% endblock %}
+
+

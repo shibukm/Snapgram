@@ -1,0 +1,52 @@
+{% load static %}
+<div>
+<head>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" /> <!-- Flexslider-CSS -->
+<link href="{% static 'css/simpleLightbox.css' %}" rel="stylesheet" type="text/css" />
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="{% static '//fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i' %}" rel="stylesheet">
+<link href="{% static '//fonts.googleapis.com/css?family=Quicksand:300,400,500,700' %}" rel="stylesheet">
+<!-- //online-fonts -->
+<style>
+input[type="text"],input[type="email"],input[type="password"],input[type="submit"]{
+
+    width:40%;
+    margin-left:30%;
+
+}
+body{
+
+    background-image:url("{% static 'images/g4.jpg' %}");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+{% if msg %}
+<h4>
+   <script>alert('{{msg}}')</script> 
+</h4>
+ {% endif %}
+
+            
+            <div class="card">
+                <form action="#" method="post" class="p-3 shadow" style="margin-top:200px;">
+                    {% csrf_token %}
+                    <div class="form-group" style="margin-top:20px">
+                    <input type="text" name="username" class="form-control" style="width:250px;margin-left:40%;"placeholder="Name" required >
+                    </div>
+                            
+                    <div class="form-group" style="margin-top:20px">
+                        <input type="password" name="pass" class="form-control"style="width:250px;margin-left:40%;" placeholder="password" required>
+                    </div>      
+                 
+                        <input type="submit" class="btn btn-success" style="margin-top:20px;margin-left:42%; width:10%;">
+                
+                </form>
+                <a href="{% url 'home' %}" style="color:black;font-weight: bold; margin-left:45%;">Register</a>
+                </div>
+     

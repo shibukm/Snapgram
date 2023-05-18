@@ -1,0 +1,41 @@
+{% extends 'userHeader.html' %}
+
+{% load static %} 
+
+{% block content %}
+{% if user %}
+<style>
+    img{
+        height: 300px;
+        width: 300px;
+        border-radius:50%;
+    }
+	h3{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+	}
+	p{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+		font-weight: bold;
+		font-size: large;
+	}
+</style>
+<div class="grids-agile" style="margin-top:150px;">
+	<div style="padding:30px;">
+        <div><i class="fa fa-smile-o"style="font-size:30px;"></i></div>
+        <div style="margin-left:10px;">
+		<h1>{{user.name}}</h1>
+		<h3>{{user.email}}</h3>
+		<h3>{{user.phone}}</h3>
+		<h3>{{user.district}}</h3>
+		<p>{{user.addr}}</p>
+		</div>
+	</div>
+	<a style="color:blue;font-weight:bold;font-size:large;margin-left:30px;" href="/edituserprofile?id={{user.id}}">Edit</a>
+	<div class="clearfix"></div>
+</div>
+{% endif %}
+{% endblock %}
+
+

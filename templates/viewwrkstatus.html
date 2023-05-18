@@ -1,0 +1,41 @@
+{% extends 'userHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:aqua;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+}
+tr{
+    text-align:center;
+    font-size: large;
+}
+</style>
+
+<div class="tab" style="margin-top:150px;">
+<h2 style="margin-left:40px;font-weight: bold;font-family: 'Times New Roman', Times, serif;">Work Status</h2>    
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th>Date</th>
+    <th>caption</th>
+    <th>Description</th>
+    <th></th>
+</tr>
+{% for stat in status %}
+
+<tr>
+    <td>{{stat.date}}</td>
+    <td>{{stat.caption}}</td>
+    <td>{{stat.desc}}</td>
+</tr>
+
+
+{% endfor %}
+
+</table>
+</div>
+{% endblock %}

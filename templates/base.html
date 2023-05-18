@@ -1,0 +1,211 @@
+    {% load static %}
+    <html lang="en">
+<head>
+<title>Snap a PhotoGallery Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Snap web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--// Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" /> <!-- Flexslider-CSS -->
+<link href="{% static 'css/simpleLightbox.css' %}" rel="stylesheet" type="text/css" />
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="{% static '//fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i' %}" rel="stylesheet">
+<link href="{% static '//fonts.googleapis.com/css?family=Quicksand:300,400,500,700' %}" rel="stylesheet">
+<!-- //online-fonts -->
+</head>
+    <!-- header -->
+	<div class="header-w3layouts"> 
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top" style="background-color:black;">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Snap</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<h1><a class="navbar-brand" href="index.html"><span>S</span>nap</a></h1>
+			</div> 
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li class="hidden"><a class="page-scroll" href="#page-top"></a>	</li>
+					<li class="active"><a class="page-scroll" href="#home">Home</a></li>
+					<li><a class="page-scroll scroll" href="#about">About</a></li>
+					<li><a class="page-scroll scroll" href="#services">Services</a></li>
+					<li><a class="page-scroll scroll" href="#team">Team</a></li>
+					<li><a class="page-scroll scroll" href="#gallery">Gallery</a></li>
+					<li><a class="page-scroll scroll" href="#mail">Mail Us</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</nav>  
+    </div>	
+    {% block content %}
+{% endblock %}
+<br>
+<br>
+
+<!-- Footer -->
+<div class="footer w3ls">
+	<div class="container">
+			<div class="ftr-menu">
+				 <ul>
+					<li><a class="scroll" href="#home">Home </a></li>
+					<li><a class="scroll" href="#about">About</a></li>
+					<li><a class="scroll" href="#services">Services</a></li>
+					<li><a class="scroll" href="#team">Team</a></li>
+					<li><a class="scroll" href="#gallery">Gallery</a></li>
+					<li><a class="scroll" href="#contact">Contact Us</a></li>
+				 </ul>
+			</div>
+			<div class="w3ls-social-icons-2">
+				<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+				<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+				<a class="pinterest" href="#"><i class="fa fa-google-plus"></i></a>
+				<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+				<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+			</div>
+			<div class="logo-fo">
+				<h2><a href="index.html">Snap</a></h2>
+			</div>
+			<div class="clearfix"> </div>
+	</div>
+</div>
+<div class="copyrights">
+	<p>&copy; 2017 Snap. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+</div>
+<!-- //Footer -->
+
+<!-- js-scripts -->			
+	
+		<!-- js -->
+			<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+		<!-- //js -->
+	
+		<!-- Baneer-js -->
+			<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+			<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						  // Slideshow 4
+						  $("#slider4").responsiveSlides({
+							auto: true,
+							pager:true,
+							nav:false,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+							  $('.events').append("<li>before event fired.</li>");
+							},
+							after: function () {
+							  $('.events').append("<li>after event fired.</li>");
+							}
+						  });
+					
+						});
+			</script>
+			 <script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider").responsiveSlides({
+									auto: true,
+									pager:false,
+									nav:false,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+							
+								});
+							 </script>
+			
+							 
+		<!-- //Baneer-js -->
+		<!-- fixed-scroll-nav-js --> 
+		<script src="{% static 'js/scrolling-nav.js' %}"></script>  
+		<!-- //fixed-scroll-nav-js --> 
+			<!-- Stats-Number-Scroller-Animation-JavaScript -->
+			<script src="{% static 'js/waypoints.min.js' %}"></script> 
+			<script src="{% static 'js/counterup.min.js' %}"></script> 
+			<script>
+				jQuery(document).ready(function( $ ) {
+					$('.counter').counterUp({
+						delay: 10,
+						time: 1000,
+					});
+				});
+			</script>
+		<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+	<!-- Progressive-Bars-JavaScript -->
+			<script src="{% static 'js/bars.js' %}"></script>
+		<!-- //Progressive-Bars-JavaScript -->
+		<!-- gallery -->
+		<script src="{% static 'js/simpleLightbox.js' %}"></script>
+	<script>
+		$('.w3_agile_gallery_grid a').simpleLightbox();
+	</script>
+	<!-- //gallery -->
+
+		<!-- start-smoth-scrolling -->
+			<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){		
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+			</script>
+		<!-- start-smoth-scrolling -->
+		
+		<!-- smooth scrolling-bottom-to-top -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear' 
+						};
+					*/								
+					$().UItoTop({ easingType: 'easeOutQuart' });
+					});
+				</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+		<!-- //smooth scrolling-bottom-to-top -->
+		<!-- FlexSlider -->
+				  <script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+				  <script type="text/javascript">
+					$(function(){
+					 
+					});
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+		<!-- FlexSlider -->
+<!-- //js-scripts -->

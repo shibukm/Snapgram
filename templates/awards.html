@@ -1,0 +1,73 @@
+{% extends 'associateHeader.html' %}
+{% load static %} 
+
+{% block content %}
+{% load static %}
+
+<style>
+input[type="text"],input[type="email"],input[type="password"],input[type="submit"],input[type="file"],input[type="date"]{
+
+    width:40%;
+    margin-left:30%;
+
+}
+/* body{
+
+    background-image:url("{% static 'images/bg.jpg' %}");
+    background-repeat:no-repeat;
+    background-size: cover;
+} */
+</style>
+</head>
+
+
+            <h1 style="color:red;margin-top:150px;text-align:center;">Awards</h1>
+
+            <div class="card">
+                <form action="#" method="post" class="p-3 shadow" style="margin-top:20px">
+                    {% csrf_token %}
+
+                    <div class="form-group" style="margin-top:20px">
+                         <input type="text" name="award" class="form-control" placeholder="Award" required>
+                    </div>
+
+                    <div class="form-group" style="margin-top:20px">
+                            {% if assoc %}
+                            <input name="assoc" class="form-control" style="width: 250px;margin-left:30%;"value={{assoc.name}} >
+                            {% endif %}
+        
+                    </div>
+
+                    {% if msg %}
+                    <script> alert("{{msg}}")</script>
+                    {% endif %}
+                    <div class="form-group" style="margin-top:20px">
+                        <select name="grapher" class="form-control" style="width: 250px;margin-left:30%;" required>
+                            {% for ph in grapher %}
+                            <option value="{{ph.name}}">{{ ph.name }}</option>
+                            {% endfor %}
+                          </select>
+                    </div>
+
+                     <div class="form-group" style="margin-top:20px">
+                         <input type="date" name="date" class="form-control" required>
+                    </div>
+
+                    <div class="form-group" style="margin-top:20px;margin-left:30%">
+                        <textarea name="desc" cols="80" rows="20" placeholder="description"></textarea>
+                        </div>       
+                 
+                        <input type="submit" class="btn btn-success" style="margin-top:20px;margin-left:45%; width:10%;">
+                
+                </form>
+                
+                </div>
+     
+
+
+
+
+
+{% endblock %}
+
+

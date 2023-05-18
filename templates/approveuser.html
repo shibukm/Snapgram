@@ -1,0 +1,42 @@
+{% extends 'adminHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:aqua;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+}
+tr{
+    text-align:center;
+    font-size: large;
+}
+</style>
+<div class="tab" style="margin-top: 200px;">
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th></th>
+</tr>
+{% for u in user %}
+<tr>
+    <td>{{u.name}}</td>
+    <td>{{u.email}}</td>
+    <td>{{u.phone}}</td>
+    <td><a href="/approve?id={{u.logid.id}}&user=user"><button style="background-color:cyan;color:black">Approve</button></a></td>
+</tr>
+
+
+{% endfor %}
+
+</table>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,44 @@
+{% extends 'photographerHeader.html' %}
+
+{% load static %} 
+
+{% block content %}
+{% if graphers %}
+<style>
+    img{
+        height: 300px;
+        width: 300px;
+        border-radius:50%;
+    }
+	h3{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+	}
+	p{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+		font-weight: bold;
+		font-size: large;
+	}
+</style>
+<div class="grids-agile" style="margin-top:150px;">
+	<div>                     
+		<center><img src="{{ graphers.image }}" alt=" " class="img-responsive"></center>
+	</div>
+	<div style="padding:30px;">
+
+		<h1>{{graphers.name}}</h1>
+		<h3>{{graphers.district}}</h3>
+		<h3>{{graphers.specialization}}</h3>
+		<h3>{{graphers.email}}</h3>
+		<h3>{{graphers.phone}}</h3>
+		<p>{{graphers.addr}}</p>
+		
+	</div>
+	<a style="color:blue;font-weight:bold;font-size:large;margin-left:30px;" href="/editprofile?id={{graphers.id}}">Edit</a>
+	<div class="clearfix"></div>
+</div>
+{% endif %}
+{% endblock %}
+
+

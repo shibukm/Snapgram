@@ -1,0 +1,55 @@
+{% extends 'userHeader.html' %}
+{% load static %} 
+{% block content %}
+
+<style>
+th{
+    background-color:aqua;
+    font-weight: bold;
+    text-align:center;
+    font-size: large;
+}
+tr{
+    text-align:center;
+    font-size: large;
+}
+</style>
+<div class="tab" style="margin-top: 200px;">
+<table width="80%" style="margin:70px; height:130px;">
+
+<tr>
+    <th>Photogarpher</th>
+    <th>BookingFrom</th>
+    <th>BookingTo</th>
+    <th>Status</th>
+    <th>Amount</th>
+    <th></th>
+</tr>
+
+{% for b in book %}
+
+<tr>
+    <td>{{b.phid.name}}</td>
+    <td>{{b.fromdate}}</td>
+    <td>{{b.todate}}</td>
+    {% if b.status == None %}
+    <td>Pending</td>
+    {% else %}
+    <td>{{b.status}}</td>
+    {% endif %}
+    <td>{{b.tamount}}</td>
+    {% if b.status == 'commited' %}
+    <td><a href="/viewwrkstatus?id={{b.id}}">view Status</a></td>
+    <td><a href="/cancel?id={{b.id}}">cancel</a></td>
+    {% endif %}
+</tr>
+
+
+{% endfor %}
+
+</table>
+</div>
+
+{% endblock %}
+
+

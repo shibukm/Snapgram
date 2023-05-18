@@ -1,0 +1,50 @@
+{% extends 'userHeader.html' %}
+
+{% load static %} 
+
+{% block content %}
+{% for graph in graphers %}
+<style>
+	h3{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+	}
+	p{
+		font-family: 'Times New Roman', Times, serif;
+		margin-top:20px;
+		font-weight: bold;
+		font-size: large;
+	}
+</style>
+
+<div class="grids-agile" style="margin-top:150px;">
+	<div class="col-md-1">                     
+		
+	</div>
+	<div class="col-md-6" style="padding:30px;">
+
+		<h1>{{graph.name}}</h1>
+		<h3>{{graph.district}}</h3>
+		<h3>{{graph.specialization}}</h3>
+		<h3>{{graph.email}}</h3>
+		<h3>{{graph.phone}}</h3>
+		<p>{{graph.addr}}</p><br>
+        <a href="/viewdetails?id={{graph.id}}" style="color:blue;font-size:larger;">View Details</a> &nbsp;
+        <a href="/addbooking?id={{graph.id}}" style="color:red;font-size:larger;">Book</a>
+		<a href="/customerreview?id={{graph.id}}" style="color:red;font-size:larger;">Add review</a>
+	</div>
+
+	<div class="col-md-4">                     
+		<img src="{{ graph.image }}" alt=" " class="img-responsive" height="200px;"width="200px;">
+	</div>
+
+<div class="col-md-1"> 
+</div> 
+	<div class="clearfix"></div>
+
+{% endfor %}
+
+{% endblock %}
+
+
+

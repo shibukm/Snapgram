@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Cyborg - Awesome HTML5 Template</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+		<!-- Additional CSS Files -->
+		<link rel="stylesheet" href="/static/css/fontawesome.css" />
+		<link rel="stylesheet" href="/static/css/templatemo-cyborg-gaming.css" />
+		<link rel="stylesheet" href="/static/css/owl.css" />
+		<link rel="stylesheet" href="/static/css/animate.css" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+		/>
+		<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+	</head>
+
+	<body>
+		<!-- ***** Preloader Start ***** -->
+		<div id="js-preloader" class="js-preloader">
+			<div class="preloader-inner">
+				<span class="dot"></span>
+				<div class="dots">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<!-- ***** Preloader End ***** -->
+
+		<!-- ***** Header Area Start ***** -->
+
+		<!-- ***** Header Area End ***** -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="page-content">
+						<!-- ***** Banner Start ***** -->
+						<div class="main-banner">
+							<div class="row">
+								<div class="col-lg-7">
+									<div class="header-text">
+										<h4><em>{{datas.caption}}</em></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ***** Banner End ***** -->
+
+						<!-- ***** Most Popular Start ***** -->
+						<div class="most-popular">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="heading-section"></div>
+									<div class="row">
+										
+										<!-- <div class="col-lg-6">
+											<div class="item">
+												<div class="row">
+													<div class="col-lg-6 col-sm-6">
+														<div class="item inner-item">
+															<img src="/static/images/popular-05.jpg" alt="" />
+															<h4>Mini Craft<br /><span>Legendary</span></h4>
+															<ul>
+																<li><i class="fa fa-star"></i> 4.8</li>
+																<li><i class="fa fa-download"></i> 2.3M</li>
+															</ul>
+														</div>
+													</div>
+													<div class="col-lg-6 col-sm-6">
+														<div class="item">
+															<img src="/static/images/popular-06.jpg" alt="" />
+															<h4>Eagles Fly<br /><span>Matrix Games</span></h4>
+															<ul>
+																<li><i class="fa fa-star"></i> 4.8</li>
+																<li><i class="fa fa-download"></i> 2.3M</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div> -->
+										{% for d in data %}
+										<div class="col-lg-3 col-sm-6">
+											<div class="item">
+												<img src="/media/{{d.images}}" alt="" />
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ***** Most Popular End ***** -->
+
+						<!-- ***** Gaming Library Start ***** -->
+
+						<!-- ***** Gaming Library End ***** -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<!-- Bootstrap core JavaScript -->
+		<script src="/static/jquery/jquery.min.js"></script>
+		<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+		<script src="/static/js/isotope.min.js"></script>
+		<script src="/static/js/owl-carousel.js"></script>
+		<script src="/static/js/tabs.js"></script>
+		<script src="/static/js/popup.js"></script>
+		<script src="/static/js/custom.js"></script>
+	</body>
+</html>
